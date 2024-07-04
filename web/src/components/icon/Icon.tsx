@@ -2,7 +2,7 @@ import React, { forwardRef, HTMLAttributes, memo, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import * as SvgIcon from './svg-icons';
-import * as Material from './material-icons';
+// import * as Material from './material-icons';
 import pascalcase from 'pascalcase';
 import { TColor } from '../../type/color-type';
 import { TIcons, TIconsSize } from '../../type/icons-type';
@@ -39,7 +39,7 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
 		const SvgIconWrapper = SvgIcon[IconName];
 		// @ts-ignore
 		// eslint-disable-next-line import/namespace
-		const MaterialWrapper = Material[IconName];
+		// const MaterialWrapper = Material[IconName];
 
 		const ClassName = classNames(
 			'svg-icon',
@@ -64,11 +64,16 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
 		if (isForceMaterial || (!isForceCustom && typeof MaterialWrapper === 'function')) {
 			return (
 				<RefWrapper ref={ref}>
-					<MaterialWrapper
-						data-name={`Material--${icon}`}
+				<SvgIconWrapper
+						data-name={`SvgIcon--${IconName}`}
 						className={classNames('svg-icon--material', ClassName)}
 						{...props}
 					/>
+					{/*<MaterialWrapper
+						data-name={`Material--${icon}`}
+						className={classNames('svg-icon--material', ClassName)}
+						{...props}
+					/>*/}
 				</RefWrapper>
 			);
 		}
