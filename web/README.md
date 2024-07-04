@@ -1,6 +1,7 @@
-# Facit | React Admin Dashboard Template V4.1.6
+# Facit | React Admin Dashboard Template
 
 #### Required files (Checked ones should definitely be in your project)
+
 - [x] public[^1]
 - [x] src[^1]
 - [ ] SvgIcons
@@ -34,20 +35,22 @@
 [^6]: Required if you're using **yarn**, you can delete it if you're using **npm**.
 
 ## Node
+
 Node version must be 16 or higher.
 
 To continue changing what you see in the demo
 
-```cd facit```
-
+`cd facit`
 
 ### npm
-```npm install --legacy-peer-deps```
 
-or 
+`npm install --legacy-peer-deps`
+
+or
 
 ### Yarn
-```yarn install```
+
+`yarn install`
 
 Inside the newly created project, you can run some built-in commands:
 
@@ -56,7 +59,4 @@ Inside the newly created project, you can run some built-in commands:
 Runs the app in development mode.<br>
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173) to view it in the browser.
 
-
 ### Detailed information on how to use it is given at [facit.omtanke.studio](https://facit.omtanke.studio/) or [facit-story.omtanke.studio](https://facit-story.omtanke.studio/). If you have questions, you can get support from us 24/7.
-
-
