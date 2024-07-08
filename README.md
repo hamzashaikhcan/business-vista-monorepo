@@ -40,20 +40,16 @@ Performance Metrics: Track key performance indicators (KPIs) to evaluate the eff
 **Usage**
 
 Lead Management:
-
 Use the lead capture form to add new leads. Access the leads dashboard to view and manage all captured leads.
 
 
 Client Interaction:
-
 Log interactions using the client communication feature. Schedule meetings directly from the client profile.
 
 
 Interview Scheduling:
-
 Share your interview availability link with clients and let them book slots that suit them.
 
 
 Trello Integration:
-
 Create and manage Trello tickets for tasks, features, and workflows directly from the platform.
