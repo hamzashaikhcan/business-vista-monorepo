@@ -1,4 +1,4 @@
-**Business Vista**
+# Business Vista
 
 Business Vista is an advanced lead generation product designed to streamline the workflow of Business Developers and Software Developers. It helps manage client interactions, interview scheduling, and lead generation processes through detailed documentation and ticket management on Trello.
 
