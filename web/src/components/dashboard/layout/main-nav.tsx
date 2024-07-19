@@ -32,20 +32,17 @@ export function MainNav(): React.JSX.Element {
           position: 'sticky',
           top: 0,
           zIndex: 'var(--mui-zIndex-appBar)',
-        }}
-      >
+        }}>
         <Stack
           direction="row"
           spacing={2}
-          sx={{ alignItems: 'center', justifyContent: 'space-between', minHeight: '64px', px: 2 }}
-        >
+          sx={{ alignItems: 'center', justifyContent: 'space-between', minHeight: '64px', px: 2 }}>
           <Stack sx={{ alignItems: 'center' }} direction="row" spacing={2}>
             <IconButton
               onClick={(): void => {
                 setOpenNav(true);
               }}
-              sx={{ display: { lg: 'none' } }}
-            >
+              sx={{ display: { lg: 'none' } }}>
               <ListIcon />
             </IconButton>
             <Tooltip title="Search">
@@ -55,18 +52,18 @@ export function MainNav(): React.JSX.Element {
             </Tooltip>
           </Stack>
           <Stack sx={{ alignItems: 'center' }} direction="row" spacing={2}>
-            <Tooltip title="Contacts">
+            {/* <Tooltip title="Contacts">
               <IconButton>
                 <UsersIcon />
               </IconButton>
-            </Tooltip>
-            <Tooltip title="Notifications">
+            </Tooltip> */}
+            {/* <Tooltip title="Notifications">
               <Badge badgeContent={4} color="success" variant="dot">
                 <IconButton>
                   <BellIcon />
                 </IconButton>
               </Badge>
-            </Tooltip>
+            </Tooltip> */}
             <Avatar
               onClick={userPopover.handleOpen}
               ref={userPopover.anchorRef}

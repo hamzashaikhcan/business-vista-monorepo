@@ -17,28 +17,62 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { Controller, useForm } from 'react-hook-form';
 import { z as zod } from 'zod';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import { styled } from '@mui/material/styles';
 
 import { paths } from '@/paths';
 import { authClient } from '@/lib/auth/client';
 import { useUser } from '@/hooks/use-user';
+
+const StyledPhoneInput = styled((props: React.ComponentProps<typeof PhoneInput>) => <PhoneInput {...props} />)(
+  ({ theme }) => ({
+    '& .PhoneInputCountry': {
+      marginRight: theme.spacing(1),
+    },
+    '& .PhoneInputInput': {
+      ...theme.typography.body1,
+      padding: '18.5px 14px',
+      border: `1px solid ${theme.palette.divider}`,
+      borderRadius: theme.shape.borderRadius,
+      width: '100%',
+      transition: theme.transitions.create(['border-color', 'box-shadow']),
+      '&:hover': {
+        borderColor: theme.palette.text.primary,
+      },
+      '&:focus': {
+        borderColor: theme.palette.primary.main,
+        boxShadow: `0 0 0 2px ${theme.palette.primary.main}33`,
+      },
+    },
+  }),
+);
 
 const schema = zod.object({
   firstName: zod.string().min(1, { message: 'First name is required' }),
   lastName: zod.string().min(1, { message: 'Last name is required' }),
   email: zod.string().min(1, { message: 'Email is required' }).email(),
   password: zod.string().min(6, { message: 'Password should be at least 6 characters' }),
+  company: zod.string().min(1, { message: 'Company name is required' }),
+  phoneNumber: zod.string().min(1, { message: 'Phone number is required' }),
   terms: zod.boolean().refine((value) => value, 'You must accept the terms and conditions'),
 });
 
 type Values = zod.infer<typeof schema>;
 
-const defaultValues = { firstName: '', lastName: '', email: '', password: '', terms: false } satisfies Values;
+const defaultValues = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  company: '',
+  phoneNumber: '',
+  terms: false,
+} satisfies Values;
 
 export function SignUpForm(): React.JSX.Element {
   const router = useRouter();
-
   const { checkSession } = useUser();
-
   const [isPending, setIsPending] = React.useState<boolean>(false);
 
   const {
@@ -60,14 +94,10 @@ export function SignUpForm(): React.JSX.Element {
         return;
       }
 
-      // Refresh the auth state
       await checkSession?.();
-
-      // UserProvider, for this case, will not refresh the router
-      // After refresh, GuestGuard will handle the redirect
       router.refresh();
     },
-    [checkSession, router, setError]
+    [checkSession, router, setError],
   );
 
   return (
@@ -98,10 +128,10 @@ export function SignUpForm(): React.JSX.Element {
             control={control}
             name="lastName"
             render={({ field }) => (
-              <FormControl error={Boolean(errors.firstName)}>
+              <FormControl error={Boolean(errors.lastName)}>
                 <InputLabel>Last name</InputLabel>
                 <OutlinedInput {...field} label="Last name" />
-                {errors.firstName ? <FormHelperText>{errors.firstName.message}</FormHelperText> : null}
+                {errors.lastName ? <FormHelperText>{errors.lastName.message}</FormHelperText> : null}
               </FormControl>
             )}
           />
@@ -124,6 +154,27 @@ export function SignUpForm(): React.JSX.Element {
                 <InputLabel>Password</InputLabel>
                 <OutlinedInput {...field} label="Password" type="password" />
                 {errors.password ? <FormHelperText>{errors.password.message}</FormHelperText> : null}
+              </FormControl>
+            )}
+          />
+          <Controller
+            control={control}
+            name="company"
+            render={({ field }) => (
+              <FormControl error={Boolean(errors.company)}>
+                <InputLabel>Company</InputLabel>
+                <OutlinedInput {...field} label="Company" />
+                {errors.company ? <FormHelperText>{errors.company.message}</FormHelperText> : null}
+              </FormControl>
+            )}
+          />
+          <Controller
+            control={control}
+            name="phoneNumber"
+            render={({ field }) => (
+              <FormControl error={Boolean(errors.phoneNumber)} fullWidth>
+                <StyledPhoneInput {...field} international countryCallingCodeEditable={true} defaultCountry="PK" />
+                {errors.phoneNumber ? <FormHelperText>{errors.phoneNumber.message}</FormHelperText> : null}
               </FormControl>
             )}
           />
