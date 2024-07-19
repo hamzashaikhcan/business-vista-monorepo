@@ -9,21 +9,20 @@ class Leads extends Model {
     static get jsonSchema() {
         return {
             type: 'object',
-            required: ['name', 'status'],
+            required: ['name'],
 
             properties: {
                 id: { type: 'integer' },
                 name: { type: 'string' },
-                profileId: { type: 'integer' },
-                bdId: { type: 'integer' },
-                assigneeId: { type: 'integer' },
-                currentStep: { type: 'integer' },
-                status: { type: 'string' },
+                profile_id: { type: 'integer' },
+                bd_id: { type: 'integer' },
+                assignee_id: { type: 'integer' },
+                current_step: { type: 'integer' },
+                status: { type: 'integer' },
                 description: { type: 'string' },
                 resume: { type: 'string' },
-                is_active: { type: 'boolean', default: false },
-                created_at: { type: 'date-time' },
-                updated_at: { type: 'date-time' },
+                created_at: { type: 'date-time', default: new Date().toISOString() },
+                updated_at: { type: 'date-time', default: new Date().toISOString() }
             },
         };
     }
