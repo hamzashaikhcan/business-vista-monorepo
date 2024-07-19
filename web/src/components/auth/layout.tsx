@@ -19,8 +19,7 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
         flexDirection: 'column',
         gridTemplateColumns: '1fr 1fr',
         minHeight: '100%',
-      }}
-    >
+      }}>
       <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
         <Box sx={{ p: 3 }}>
           <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-block', fontSize: 0 }}>
@@ -39,18 +38,17 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
           display: { xs: 'none', lg: 'flex' },
           justifyContent: 'center',
           p: 3,
-        }}
-      >
+        }}>
         <Stack spacing={3}>
           <Stack spacing={1}>
             <Typography color="inherit" sx={{ fontSize: '24px', lineHeight: '32px', textAlign: 'center' }} variant="h1">
               Welcome to{' '}
               <Box component="span" sx={{ color: '#15b79e' }}>
-                Devias Kit
+                Business-Vista
               </Box>
             </Typography>
             <Typography align="center" variant="subtitle1">
-              A professional template that comes with ready-to-use MUI components.
+              A Business development model to improve jobs performance
             </Typography>
           </Stack>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>

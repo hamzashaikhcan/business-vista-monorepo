@@ -1,5 +1,6 @@
 import type { Icon } from '@phosphor-icons/react/dist/lib/types';
 import { ChartPie as ChartPieIcon } from '@phosphor-icons/react/dist/ssr/ChartPie';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import { GearSix as GearSixIcon } from '@phosphor-icons/react/dist/ssr/GearSix';
 import { PlugsConnected as PlugsConnectedIcon } from '@phosphor-icons/react/dist/ssr/PlugsConnected';
 import { User as UserIcon } from '@phosphor-icons/react/dist/ssr/User';
