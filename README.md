@@ -22,12 +22,6 @@ Automated Interview Scheduling: Allow clients to book interview slots based on y
 Calendar Sync: Sync with Google Calendar, Outlook, and other calendar services to keep your schedule updated.
 Reminder Notifications: Send automated reminders to clients and team members about upcoming interviews.
 
-## Trello Ticket Management
-
-Comprehensive Ticket Creation: Generate detailed Trello tickets for each task, feature, and workflow.
-Task Assignment: Assign tasks to team members with clear deadlines and priority levels.
-Progress Tracking: Monitor the progress of each ticket through Trello's Kanban board interface.
-Collaboration: Allow team members to comment, attach files, and update tickets in real-time.
 
 ## Analytics and Reporting
 
@@ -36,20 +30,7 @@ Custom Reports: Generate custom reports to gain insights into your business deve
 Performance Metrics: Track key performance indicators (KPIs) to evaluate the effectiveness of your strategies.
 
 
-
 # Usage
 
 ### Lead Management:
 Use the lead capture form to add new leads. Access the leads dashboard to view and manage all captured leads.
-
-
-### Client Interaction:
-Log interactions using the client communication feature. Schedule meetings directly from the client profile.
-
-
-### Interview Scheduling:
-Share your interview availability link with clients and let them book slots that suit them.
-
-
-### Trello Integration:
-Create and manage Trello tickets for tasks, features, and workflows directly from the platform.
