@@ -1,15 +1,65 @@
 {
-  "name": "business-vista",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "express": "^4.19.2"
-  }
+	"name": "sternguard",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node app.js",
+		"dev": "nodemon app.js",
+		"migrate": "knex migrate:latest",
+		"seed": "knex seed:run",
+		"rollback": "knex migrate:rollback",
+		"test": "jest --detectOpenHandles --coverage --collectCoverage",
+		"lint": "eslint '**/*.js'"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^7.18.0",
+		"husky": "^4.3.8",
+		"jest": "^26.6.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint",
+			"pre-push": "yarn lint"
+		}
+	},
+	"dependencies": {
+		"@cloudnative/health": "^2.1.2",
+		"@cloudnative/health-connect": "^2.1.0",
+		"aws-sdk": "^2.1061.0",
+		"bcrypt": "^5.0.0",
+		"body-parser": "^1.19.0",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.17.1",
+		"free-email-domains": "^1.0.19",
+		"jsonwebtoken": "^8.5.1",
+		"knex": "^0.95.4",
+		"multer": "^1.4.4",
+		"multer-s3": "^2.10.0",
+		"node-vault": "0.9.22",
+		"nodemon": "^3.1.4",
+		"objection": "^2.2.6",
+		"passport": "^0.4.1",
+		"passport-azure-ad-oauth2": "^0.0.4",
+		"passport-google-oauth2": "^0.2.0",
+		"pg": "^8.5.1",
+		"stripe": "^8.143.0",
+		"winston": "^3.6.0"
+	},
+	"jest": {
+		"coverageThreshold": {
+			"global": {
+				"branches": 0,
+				"functions": 0,
+				"lines": 0
+			}
+		},
+		"collectCoverageFrom": [
+			"**/controllers/*"
+		]
+	}
 }
