@@ -29,8 +29,8 @@ router.get('/:id', async (req, res) => {
 
 // Create a new lead profile
 router.post('/', async (req, res) => {
-    const { name, description } = req.body;
-    const { result, error } = await leadProfilesController.addLeadProfile({ name, description });
+    const { name } = req.body;
+    const { result, error } = await leadProfilesController.addLeadProfile({ name });
     if (error) {
         res.status(error.status).json({ message: error.message });
     } else if (result) {

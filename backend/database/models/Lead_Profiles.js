@@ -14,7 +14,6 @@ class LeadProfiles extends Model {
             properties: {
                 id: { type: 'integer' },
                 name: { type: 'string' },
-                description: { type: 'string', default: null }, // Optional, add more fields as needed
                 created_at: { type: 'date-time', default: new Date().toISOString() },
                 updated_at: { type: 'date-time', default: new Date().toISOString() }
             },
